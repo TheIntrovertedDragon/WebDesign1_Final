@@ -1,7 +1,7 @@
 body {
   background-color: #fbf6e6;
   margin: 0;
-  font-family: "mendl-sans-dawn", sans-serif;
+  font-family: "mendl-sans-dusk", sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #462d0e;
@@ -9,16 +9,31 @@ body {
 
 h1 {
   font-family: "acuta", serif;
-  font-weight: 700;
+  font-weight: 467;
+  font-size: 80px;
   font-style: italic;
+  padding-top:75px;
+  padding-bottom:75px;
+  padding-right:40px;
+  padding-left:40px;
+  background-color: #ece0d0;
 }
 
+p {
+  padding: 15px;
+}
 
 .grid-container{
   display:grid;
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 20px;
+  margin-right: 20px;
 }
+
+
+
+
 
 nav {
   background-color: #9d8b3a;
@@ -58,3 +73,14 @@ nav a:hover {
 
 
 
+
+@keyframes reveal {
+  from {transform: translateY(100%);}
+  to {transform: translateY(0);}
+}
+
+.reveal {
+  overflow: hidden;
+  animation-name: reveal;
+  animation-duration: 0.3s;
+}
