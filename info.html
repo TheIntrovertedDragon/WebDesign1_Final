@@ -7,7 +7,43 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://use.typekit.net/zxb3ewn.css">
   <link rel="stylesheet" href="https://use.typekit.net/zxb3ewn.css">
-  
+  <style>
+    .overflow-box {
+      position: absolute; 
+      left: 50px;
+      right: 50px;
+      height:0px;
+      width: auto;
+      color:#462d0e;
+      z-index: 10;
+      padding:10px;
+      text-align: left;
+      overflow: hidden;
+    }
+
+    .loc-bar {
+      max-width: 100%;
+      height: 5px;
+      background-color: #c09651;
+    }
+
+    .loc-name {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .loc-name:hover ~ .overflow-box {
+      animation-name: open-box;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    @keyframes open-box {
+      0% {height: 5px; padding: 0px;}
+      100% {height: max-content; background-color: #ece0d0;}
+    }
+  </style>
 
 </head>
 
@@ -35,13 +71,17 @@
       <div class="titleline"></div>
     </div>
 
-    <p style="grid-column: 1 / span 6; grid-row: 2;" class="summarytext">Here are some directions to our in-person shop from different roads. Hover to look at the directions, and click to copy them.</p>
+    <div style="grid-column: 1 / span 6; grid-row: 2;" class="summarytext">
+      <img src="images/maplocation.png" style="max-width: 500px;">
+      <p>Here are some directions to our in-person shop from different roads. Hover to look at the directions, and click to copy them.</p>
 
+    </div>
+      
     <hr class="line" style="grid-column: 1 / span 6; grid-row: 3;">
 
     
-    <div class="redinfocard" style="grid-column: 1 / span 3; grid-row: 4;">
-      <h3 class="loc-name">From 1-5 North</h3>
+    <div class="redinfocard" style="grid-column: 2 / span 4; grid-row: 4;">
+      <h3 class="loc-name" onclick="copy('directions1')">From 1-5 North</h3>
       <div class="loc-bar"></div>
       <div class="overflow-box">
         <ol id="directions1">
@@ -56,33 +96,97 @@
     </div>
 
     
-    <div class="redinfocard" style="grid-column: 4 / span 3; grid-row: 4;">
-      <h3>From 1-5 South</h3>
-      
+    <div class="redinfocard" style="grid-column: 2 / span 4; grid-row: 5;">
+      <h3 class="loc-name" onclick="copy('directions2')">From 1-5 South</h3>
+      <div class="loc-bar"></div>
+      <div class="overflow-box">
+        <ol id="directions2">
+          <li>Take the S KENT DES MOINES RD/WA-516 W via EXIT 149B toward DES MOINES.</li>
+          <li>Stay STRAIGHT to go onto MARINE VIEW DR S/WA-509.</li>
+          <li>End at 21921 Marine View Dr S Des Moines, WA 98198.</li>
+        </ol>
+      </div>
     </div>
     
-    <div class="redinfocard" style="grid-column: 1 / span 3; grid-row: 5;">
-      <h3>From I-99 (Pacific Highway) North</h3>
+    <div class="redinfocard" style="grid-column: 2 / span 4; grid-row: 6;">
+      <h3 class="loc-name" onclick="copy('directions3')">From I-99 (Pacific Highway) North</h3>
+      <div class="loc-bar"></div>
+      <div class="overflow-box">
+        <ol id="directions3">
+          <li>Take a right onto South 216th ST.</li>
+          <li>S 216TH ST becomes 7TH PL S.</li>
+          <li>Turn LEFT onto MARINE VIEW DR S/WA-509.</li>
+          <li>End at 21921 Marine View Dr S Des Moines, WA 98198</li>
+        </ol>
+      </div>
     </div>
     
-    <div class="redinfocard" style="grid-column: 4 / span 3; grid-row: 5;">
-      <h3>From I-99 (Pacific Highway) South</h3>
+    <div class="redinfocard" style="grid-column: 2 / span 4; grid-row: 7;">
+      <h3 class="loc-name" onclick="copy('directions4')">From I-99 (Pacific Highway) South</h3>
+      <div class="loc-bar"></div>
+      <div class="overflow-box">
+        <ol id="directions4">
+          <li>Follow 16TH AVE S. North</li>
+          <li>Turn LEFT onto S KENT DES MOINES RD/WA-516.</li>
+          <li>At intersection, go ahead through onto MARINE VIEW DR S/WA-509.</li>
+          <li>End at 21921 Marine View Dr S Des Moines, WA 98198-6159</li>
+        </ol>
+      </div>
     </div>
     
-    <div class="redinfocard" style="grid-column: 1 / span 3; grid-row: 6;">
-      <h3>From I-509 North</h3>
+    <div class="redinfocard" style="grid-column: 2 / span 4; grid-row: 8;">
+      <h3 class="loc-name" onclick="copy('directions5')">From I-509 North</h3>
+      <div class="loc-bar"></div>
+      <div class="overflow-box">
+        <ol id="directions5">
+          <li>Merge onto WA-509 S toward DES MOINES.</li>
+          <li>Take the exit on the LEFT toward DES MOINES/S. 188TH ST.</li>
+          <li>Turn SLIGHT RIGHT onto DES MOINES MEMORIAL DR.</li>
+          <li>Turn RIGHT to stay on DES MOINES MEMORIAL DR.</li>
+          <li>Turn LEFT onto MARINE VIEW DR S/WA-509.</li>
+          <li>End at 21921 Marine View Dr S Des Moines, WA 98198.</li>
+        </ol>
+      </div>
     </div>
     
-    <div class="redinfocard" style="grid-column: 4 / span 3; grid-row: 6;">
-      <h3>From I-509 South</h3>
+    <div class="redinfocard" style="grid-column: 2 / span 4; grid-row: 9;">
+      <h3 class="loc-name" onclick="copy('directions6')">From I-509 South</h3>
+      <div class="loc-bar"></div>
+      <div class="overflow-box">
+        <ol id="directions6">
+          <li>Starting where PACIFIC HWY S/WA-509/WA-99 are the same roadway,</li>
+          <li>Turn SLIGHT LEFT onto 16TH AVE S/WA-509. Continue on 16TH AVE S.</li>
+          <li>Turn LEFT onto S KENT DES MOINES RD/WA-516.</li>
+          <li>Stay STRAIGHT to go onto MARINE VIEW DR S/WA-509.</li>
+          <li>End at 21921 Marine View Dr S Des Moines, WA 98198.</li>
+        </ol>
+      </div>
     </div>
     
-    <div class="redinfocard" style="grid-column: 1 / span 3; grid-row: 7;">
-      <h3>From the Kent-Des Moines Highway (From the East)</h3>
+    <div class="redinfocard" style="grid-column: 2 / span 4; grid-row: 10;">
+      <h3 class="loc-name" onclick="copy('directions7')">From the Kent-Des Moines Highway (From the East)</h3>
+      <div class="loc-bar"></div>
+      <div class="overflow-box">
+        <ol id="directions7">
+          <li>Follow W WILLIS ST/WA-516 West</li>
+          <li>Turn RIGHT onto 24TH AVE S</li>
+          <li>Turn LEFT onto S 222ND ST</li>
+          <li>Turn RIGHT onto MARINE VIEW DR S/WA-509</li>
+          <li>End at 21921 Marine View Dr S Des Moines, WA 98198</li>
+        </ol>
+      </div>
     </div>
     
-    <div class="redinfocard" style="grid-column: 4 / span 3; grid-row: 7;">
-      <h3>From Des Moines Memorial Drive South</h3>
+    <div class="redinfocard" style="grid-column: 2 / span 4; grid-row: 11;">
+      <h3 class="loc-name" onclick="copy('directions8')">From Des Moines Memorial Drive South</h3>
+      <div class="loc-bar"></div>
+      <div class="overflow-box">
+        <ol id="directions8">
+          <li>Turn RIGHT to stay on DES MOINES MEMORIAL DR.</li>
+          <li>Turn LEFT onto MARINE VIEW DR S/WA-509.</li>
+          <li>End at 21921 Marine View Dr S Des Moines, WA 98198</li>
+        </ol>
+      </div>
     </div>
 
   
@@ -99,6 +203,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="javascript/script.js"></script>
 </body>
 </html>

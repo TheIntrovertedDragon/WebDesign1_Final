@@ -4,6 +4,7 @@ body {
   font-family: "mendl-sans-dusk", sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: large;
   color: #462d0e;
 }
 
@@ -20,13 +21,14 @@ h1 {
   padding-bottom:75px;
   padding-right:40px;
   padding-left:40px;
+  margin-bottom: 20px;
   background-color: #ece0d0;
 }
 
 .grid-container{
   display:grid;
   position:relative;
-  grid-gap: 10px;
+  grid-gap: 0px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
@@ -44,7 +46,7 @@ a {
 
 .summarytext{
   text-align: center;
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 6;
 }
 
 
@@ -96,76 +98,37 @@ a {
   display: inline-block;
 }
 
-.greeninfocard {
-  background-color: #9d8b3a;
+.browninfocard {
+  background-color: #c09651;
   color: #fbf6e6;
   text-align: center;
   padding: 35px;
   margin: 60px;
 }
 
-.overflow-box {
-  position: absolute; 
-  left: 50px;
-  right: 50px;
-  height:0px;
-  width: auto;
-  color:#462d0e;
-  z-index: 10;
-  padding:10px;
-  text-align: left;
-  overflow: hidden;
-}
 
-.loc-bar {
-  max-width: 100%;
-  height: 5px;
+
+
+table {
+  grid-column: 1 / span 6;
+  margin: 30px;
+  border-collapse: collapse;
+}
+td, th {
+  border: 2px solid #462d0e;
+  padding: 16px;
+}
+th {
+  padding-top: 11px;
+  padding-bottom: 11px;
   background-color: #c09651;
 }
-
-.loc-name {
-  text-decoration: underline;
-  cursor: pointer;
+.time-tbl {
+  background-color: #9d8b3a;
 }
-
-.loc-name:hover ~ .overflow-box {
-  animation-name: open-box;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+.times {
+  background-color: #ece0d0;
 }
-
-@keyframes open-box {
-  0% {height: 5px; padding: 0px;}
-  100% {height: max-content; background-color: #ece0d0;}
-}
-
-
-
-
-
-
-
-
-.sm-button {
-  background-color: #c09651;
-  color: #462d0e;
-  padding: 15px;
-  border-radius: 3px;
-  text-decoration: none;
-  margin: 10px;
-}
-
-.sm-button:hover {
-  animation: button-hover 0.67s ease forwards
-}
-
-@keyframes button-hover {
-  from {background-color: #c09651;}
-  to {background-color: #ece0d0;}
-}
-
-
 
 
 
